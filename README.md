@@ -2,8 +2,11 @@
 
 Repo containing my config files for both tmux and nvim. Will document more about the features once done.
 
-Todos: 
+Todos:
+- [x] Line Numbers
+- [x] Debugger 
 - [ ] Git Stuff
 - [ ] Bufferlines
-- [ ] line numbers
-- [ ] more themes
+- [ ] More themes
+- [ ] Keybinds for splitting windows
+- [ ] Figure out terminal stuff 
