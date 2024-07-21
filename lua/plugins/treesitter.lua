@@ -5,11 +5,9 @@ return {
     local config = require("nvim-treesitter.configs")
     config.setup({
       -- Configure wanted lagnuages here
-      ensure_installed = {"lua", "go", "c", "javascript"},
+      auto_install = true,
       highlight = { enable = true },
       indent = { enable = true },
     })
   end
-
-
 }
