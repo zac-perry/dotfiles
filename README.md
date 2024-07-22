@@ -1,6 +1,9 @@
 # NeoVim & Tmux Config
 Pretty basic nvim and tmux config. I'll be adding more to this over time but for right now, i'm mainly using it for Go stuff.
 
+![Dashboard](https://imgur.com/s9pP60y)
+![IDE](https://imgur.com/hAjUo5S)
+
 ## NeoVim Plugins & Such
 *Dashboard / Startup*
 - alpha-nvim 
