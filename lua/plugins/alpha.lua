@@ -78,6 +78,10 @@ local function layout()
 			if vim.loop.fs_stat(filename) ~= nil then
 				local icon, hl = require("nvim-web-devicons").get_icon(filename, vim.fn.fnamemodify(filename, ":e"))
 				local filename_short = string.sub(vim.fn.fnamemodify(filename, ":t"), 1, 30)
+        if not icon then
+          icon = ""
+          hl = "DevIconDefault"
+        end
 				table.insert(
 					result,
 					button(
@@ -109,21 +113,21 @@ local function layout()
 		{
 			type = "text",
 			val = {
-      [[                                                                       ]],
-      [[                                                                       ]],
-      [[                                                                       ]],
-      [[                                                                       ]],
-      [[                                                                     ]],
-      [[       ████ ██████           █████      ██                     ]],
-      [[      ███████████             █████                             ]],
-      [[      █████████ ███████████████████ ███   ███████████   ]],
-      [[     █████████  ███    █████████████ █████ ██████████████   ]],
-      [[    █████████ ██████████ █████████ █████ █████ ████ █████   ]],
-      [[  ███████████ ███    ███ █████████ █████ █████ ████ █████  ]],
-      [[ ██████  █████████████████████ ████ █████ █████ ████ ██████ ]],
-      [[                                                                       ]],
-      [[                                                                       ]],
-      [[                                                                       ]],
+				[[                                                                       ]],
+				[[                                                                       ]],
+				[[                                                                       ]],
+				[[                                                                       ]],
+				[[                                                                     ]],
+				[[       ████ ██████           █████      ██                     ]],
+				[[      ███████████             █████                             ]],
+				[[      █████████ ███████████████████ ███   ███████████   ]],
+				[[     █████████  ███    █████████████ █████ ██████████████   ]],
+				[[    █████████ ██████████ █████████ █████ █████ ████ █████   ]],
+				[[  ███████████ ███    ███ █████████ █████ █████ ████ █████  ]],
+				[[ ██████  █████████████████████ ████ █████ █████ ████ ██████ ]],
+				[[                                                                       ]],
+				[[                                                                       ]],
+				[[                                                                       ]],
 			},
 			opts = { hl = header_color, position = "center" },
 		},
@@ -165,14 +169,14 @@ return {
 							vim.opt.showtabline = 0
 						end,
 					})
-					--[[vim.api.nvim_create_autocmd("BufUnload", {
+					vim.api.nvim_create_autocmd("BufUnload", {
 						buffer = 0,
 						desc = "Enable status and tabline after alpha",
 						callback = function()
 							vim.go.laststatus = 3
 							vim.opt.showtabline = 2
 						end,
-					})--]]
+					})
 				end,
 				margin = 5,
 			},
