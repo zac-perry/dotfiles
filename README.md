@@ -49,4 +49,4 @@ Pretty basic nvim and tmux config. I'll be adding more to this over time but for
 - none-ls
 
 ## Tmux
-Tmux stuff is pretty basic. Just using TPM and the catppuccin theme.  
+Tmux stuff is pretty basic. Just using TPM and the nord theme.  
