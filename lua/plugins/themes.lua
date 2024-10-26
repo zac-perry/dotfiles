@@ -4,10 +4,19 @@ return {
 		name = "rose-pine",
 		lazy = false,
 		config = function()
-			vim.cmd("colorscheme rose-pine")
 			require("rose-pine").setup({
 				-- variant = "moon",
+				extend_background_behind_borders = true,
+				enable = {
+					terminal = true,
+					migrations = true,
+					legacy_highlights = true,
+				},
+				styles = {
+					transparency = true,
+				},
 			})
+			vim.cmd("colorscheme rose-pine")
 		end,
 	},
 	--[[	{
