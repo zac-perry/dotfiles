@@ -1,5 +1,16 @@
 return {
 	{
+		"rose-pine/neovim",
+		name = "rose-pine",
+		lazy = false,
+		config = function()
+			vim.cmd("colorscheme rose-pine")
+			require("rose-pine").setup({
+				-- variant = "moon",
+			})
+		end,
+	},
+	--[[	{
 		"shaunsingh/nord.nvim",
 		lazy = false,
 		priority = 1000,
@@ -10,7 +21,7 @@ return {
 			vim.g.nord_bold = false
 			vim.cmd("colorscheme nord")
 		end,
-	},
+	},--]]
 	--[[	{
 		"rebelot/kanagawa.nvim",
 		lazy = false,
