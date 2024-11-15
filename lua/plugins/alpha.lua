@@ -78,10 +78,10 @@ local function layout()
 			if vim.loop.fs_stat(filename) ~= nil then
 				local icon, hl = require("nvim-web-devicons").get_icon(filename, vim.fn.fnamemodify(filename, ":e"))
 				local filename_short = string.sub(vim.fn.fnamemodify(filename, ":t"), 1, 30)
-        if not icon then
-          icon = ""
-          hl = "DevIconDefault"
-        end
+				if not icon then
+					icon = ""
+					hl = "DevIconDefault"
+				end
 				table.insert(
 					result,
 					button(
