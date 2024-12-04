@@ -8,11 +8,11 @@ return {
 				-- variant = "moon",
 				extend_background_behind_borders = true,
 				enable = {
-					terminal = true,
 					migrations = true,
 					legacy_highlights = true,
 				},
 				styles = {
+          italic = false,
 					transparency = true,
 				},
 			})
