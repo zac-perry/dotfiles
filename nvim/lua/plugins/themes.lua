@@ -1,11 +1,26 @@
 return {
 	{
+		"comfysage/evergarden",
+		priority = 1000, -- Colorscheme plugin is loaded first before any other plugins
+		opts = {
+			transparent_background = true,
+			variant = "hard", -- 'hard'|'medium'|'soft'
+			overrides = {}, -- add custom overrides
+		},
+    config = function()
+      require("evergarden").setup({
+        telescope = true,
+      })
+      vim.cmd("colorscheme evergarden")
+    end
+	},
+	--[[{
 		"rose-pine/neovim",
 		name = "rose-pine",
 		lazy = false,
 		config = function()
 			require("rose-pine").setup({
-				-- variant = "moon",
+				variant = "moon",
 				extend_background_behind_borders = true,
 				enable = {
 					migrations = true,
@@ -18,7 +33,7 @@ return {
 			})
 			vim.cmd("colorscheme rose-pine")
 		end,
-	},
+	},--]]
 	--[[	{
 		"shaunsingh/nord.nvim",
 		lazy = false,

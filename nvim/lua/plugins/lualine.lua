@@ -7,7 +7,8 @@ return {
 				--theme = "catppuccin",
 				--       theme = "nord",
 				--        theme = "nordic"
-				theme = "rose-pine",
+				--theme = "rose-pine",
+        theme = "evergarden",
 			},
 		})
 	end,

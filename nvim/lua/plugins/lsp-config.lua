@@ -40,6 +40,9 @@ return {
 			lspconfig.gleam.setup({
 				capabilities = capabilities,
 			})
+      lspconfig.rust_analyzer.setup({
+        capabilities = capabilities,
+      })
 			lspconfig.elixirls.setup({
 				cmd = { path_to_elixirls },
 				capabilities = capabilities,
