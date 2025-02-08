@@ -1,2 +1,5 @@
-# NeoVim & Tmux Config
-my nvim and tmux config files.
+# dotfiles
+my neovim and tmux config: 
+
+![setup](/images/setup.png)
+

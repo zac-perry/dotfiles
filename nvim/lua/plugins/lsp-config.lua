@@ -11,9 +11,6 @@ return {
 		lazy = false,
 		config = function()
 			require("mason-lspconfig").setup({
-				-- Install the following lsp servers for different languages
-				-- (commented out rn, should just auto install for each language.
-				--ensure_installed = { "lua_ls", "tsserver", "gopls" },
 				auto_install = true,
 			})
 		end,
@@ -27,7 +24,6 @@ return {
       local path_to_elixirls = vim.fn.expand("~/.local/share/nvim/mason/packages/elixir-ls/release/language_server.sh")
 			-- Config to setup the lsps
 			-- Need to set capabilities in order for cmp_nvim_lsp to work
-			-- TODO: Reconfig this so I don't need to call "setup" on everything I wanna use
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
