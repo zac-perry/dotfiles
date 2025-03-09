@@ -5,14 +5,15 @@ return {
 		opts = {
 			transparent_background = true,
 			variant = "hard", -- 'hard'|'medium'|'soft'
-			overrides = {}, -- add custom overrides
 		},
-    config = function()
-      require("evergarden").setup({
-        telescope = true,
-      })
-      vim.cmd("colorscheme evergarden")
-    end
+		config = function()
+			require("evergarden").setup({
+				telescope = true,
+				overrides = { -- custom overrides
+				},
+			})
+			vim.cmd("colorscheme evergarden")
+		end,
 	},
 	--[[{
 		"rose-pine/neovim",
