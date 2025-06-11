@@ -1,10 +1,19 @@
 return {
 	{
-		"comfysage/evergarden",
+		"everviolet/nvim",
+		name = "evergarden",
 		priority = 1000, -- Colorscheme plugin is loaded first before any other plugins
 		opts = {
-			transparent_background = true,
-			variant = "hard", -- 'hard'|'medium'|'soft'
+			theme = {
+				variant = "spring",
+				accent = "green",
+			},
+			editor = {
+				transparent_background = false,
+				completion = {
+					color = "surface0",
+				},
+			},
 		},
 		config = function()
 			require("evergarden").setup({
@@ -15,7 +24,8 @@ return {
 			vim.cmd("colorscheme evergarden")
 		end,
 	},
-	--[[{
+}
+--[[{
 		"rose-pine/neovim",
 		name = "rose-pine",
 		lazy = false,
@@ -35,7 +45,7 @@ return {
 			vim.cmd("colorscheme rose-pine")
 		end,
 	},--]]
-	--[[	{
+--[[	{
 		"shaunsingh/nord.nvim",
 		lazy = false,
 		priority = 1000,
@@ -47,7 +57,7 @@ return {
 			vim.cmd("colorscheme nord")
 		end,
 	},--]]
-	--[[	{
+--[[	{
 		"rebelot/kanagawa.nvim",
 		lazy = false,
 		priority = 1000,
@@ -55,7 +65,7 @@ return {
 			require("kanagawa").load("wave")
 		end,
 	},--]]
-	--[[{
+--[[{
 		"catppuccin/nvim",
 		name = "catppuccin",
 		priority = 1000,
@@ -63,7 +73,7 @@ return {
 			vim.cmd.colorscheme("catppuccin-mocha")
 		end,
 	},--]]
-	--[[{
+--[[{
     'AlexvZyl/nordic.nvim',
     lazy = false,
     priority = 1000,
@@ -77,4 +87,4 @@ return {
         require('nordic').load()
     end
 }--]]
-}
+--}
