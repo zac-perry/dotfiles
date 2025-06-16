@@ -54,20 +54,20 @@ local function layout()
   lazycache.info = function()
     local plugins = #vim.tbl_keys(require("lazy").plugins())
     local v = vim.version()
-    local datetime = os.date(" %d-%m-%Y   %H:%M:%S")
+    local datetime = os.date(" %d-%m-%Y   %H:%M:%S")
     local platform = vim.fn.has("win32") == 1 and "" or ""
-    return string.format("󰂖 %d  %s %d.%d.%d  %s", plugins, platform, v.major, v.minor, v.patch, datetime)
+    return string.format(" %d  %s %d.%d.%d  %s", plugins, platform, v.major, v.minor, v.patch, datetime)
   end
 
   ---@return table
   lazycache.menu = function()
     return {
-      button("e", "  New File    ", ":enew<CR>"),
-      button("f", "  Find File   ", ":Telescope find_files<CR>"),
-      button("t", "  Find Text   ", ":Telescope live_grep<CR>"),
-      --button("c", "  NVIM Config ", ":Telescope dotfiles<CR>"),
-      button("l", "󰒲  Lazy", "<cmd>Lazy<cr>"),
-      button("q", "  Quit        ", ":qa<CR>"),
+      button("e", "  New File    ", ":enew<CR>"),
+      button("f", "  Find File   ", ":Telescope find_files<CR>"),
+      button("t", "  Find Text   ", ":Telescope live_grep<CR>"),
+      --button("c","  NVIM Config ", ":Telescope dotfiles<CR>"),
+      button("l", "  Lazy", "<cmd>Lazy<cr>"),
+      button("q", "  Quit        ", ":qa<CR>"),
     }
   end
 
@@ -109,25 +109,15 @@ local function layout()
   local header_color = "AlphaCol" .. math.random(11)
 
   return {
-    { type = "padding", val = 1 },
+    { type = "padding", val = 5 },
     {
       type = "text",
       val = {
-        [[                                                                       ]],
-        [[                                                                       ]],
-        [[                                                                       ]],
-        [[                                                                       ]],
-        [[                                                                     ]],
-        [[       ████ ██████           █████      ██                     ]],
-        [[      ███████████             █████                             ]],
-        [[      █████████ ███████████████████ ███   ███████████   ]],
-        [[     █████████  ███    █████████████ █████ ██████████████   ]],
-        [[    █████████ ██████████ █████████ █████ █████ ████ █████   ]],
-        [[  ███████████ ███    ███ █████████ █████ █████ ████ █████  ]],
-        [[ ██████  █████████████████████ ████ █████ █████ ████ ██████ ]],
-        [[                                                                       ]],
-        [[                                                                       ]],
-        [[                                                                       ]],
+
+        [[  ^  ^  ^   ^☆ ★ ☆ ___I_☆ ★ ☆ ^  ^   ^  ^  ^   ^  ^ ]],
+        [[ /|\/|\/|\ /|\ ★☆ /\-_--\ ☆ ★/|\/|\ /|\/|\/|\ /|\/|\ ]],
+        [[ /|\/|\/|\ /|\ ★ /  \_-__\☆ ★/|\/|\ /|\/|\/|\ /|\/|\ ]],
+        [[ /|\/|\/|\ /|\ 󰻀 |[]| [] | 󰻀 /|\/|\ /|\/|\/|\ /|\/|\ ]],
       },
       opts = { hl = header_color, position = "center" },
     },
@@ -143,13 +133,13 @@ local function layout()
       val = lazycache("menu"),
       opts = { spacing = 0 },
     },
-    { type = "padding", val = 1 },
+    { type = "padding", val = 2 },
     {
       type = "group",
       val = lazycache("mru"),
       opts = { spacing = 0 },
     },
-    { type = "padding", val = 1 },
+    { type = "padding", val = 3 },
   }
 end
 

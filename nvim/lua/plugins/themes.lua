@@ -1,29 +1,28 @@
 return {
-	{
-		"everviolet/nvim",
-		name = "evergarden",
-		priority = 1000, -- Colorscheme plugin is loaded first before any other plugins
-		opts = {
-			theme = {
-				variant = "spring",
-				accent = "green",
-			},
-			editor = {
-				transparent_background = false,
-				completion = {
-					color = "surface0",
-				},
-			},
-		},
-		config = function()
-			require("evergarden").setup({
-				telescope = true,
-				overrides = { -- custom overrides
-				},
-			})
-			vim.cmd("colorscheme evergarden")
-		end,
-	},
+  {
+    "comfysage/evergarden",
+    priority = 1000, -- Colorscheme plugin is loaded first before any other plugins
+    opts = {
+      --transparent_background = true,
+      --variant = "hard", -- 'hard'|'medium'|'soft'
+    },
+    config = function()
+      require("evergarden").setup({
+        telescope = true,
+        overrides = { -- custom overrides
+        },
+        opts = {
+          theme = {
+            variant = 'fall',
+          },
+        },
+        editor = {
+          transparent_background = true,
+        },
+      })
+      vim.cmd("colorscheme evergarden")
+    end,
+  },
 }
 --[[{
 		"rose-pine/neovim",
