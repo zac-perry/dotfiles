@@ -1,5 +1,6 @@
 return {
   {
+    -- TODO: Add dotnet debugging config
     "mfussenegger/nvim-dap",
     dependencies = {
       "rcarriga/nvim-dap-ui",
