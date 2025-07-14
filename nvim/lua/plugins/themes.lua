@@ -1,28 +1,15 @@
 return {
-  {
-    "comfysage/evergarden",
-    priority = 1000, -- Colorscheme plugin is loaded first before any other plugins
-    opts = {
-      --transparent_background = true,
-      --variant = "hard", -- 'hard'|'medium'|'soft'
-    },
-    config = function()
-      require("evergarden").setup({
-        telescope = true,
-        overrides = { -- custom overrides
-        },
-        opts = {
-          theme = {
-            variant = 'fall',
-          },
-        },
-        editor = {
-          transparent_background = true,
-        },
-      })
-      vim.cmd("colorscheme evergarden")
-    end,
-  },
+{
+  "vague2k/vague.nvim",
+  config = function()
+    require("vague").setup({
+      -- your config
+    })
+    vim.cmd.colorscheme("vague")
+    
+    vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "#1a1a1a" })
+    vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "#1a1a1a" })
+  end,
 }
 --[[{
 		"rose-pine/neovim",
@@ -86,4 +73,4 @@ return {
         require('nordic').load()
     end
 }--]]
---}
+}
