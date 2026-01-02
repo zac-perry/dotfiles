@@ -5,7 +5,7 @@ return {
     local config = require("nvim-treesitter.configs")
     config.setup({
       -- Configure wanted lagnuages here
-      ensure_installed = {"lua", "go", "rust", "toml", "c", "c_sharp"},
+      ensure_installed = {"lua", "go", "rust", "toml", "c", "c_sharp", "typescript", "javascript"},
       auto_install = true,
       highlight = { enable = true },
       indent = { enable = true },
