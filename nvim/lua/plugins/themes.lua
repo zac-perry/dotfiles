@@ -1,17 +1,16 @@
 return {
-{
-  "vague2k/vague.nvim",
-  config = function()
-    require("vague").setup({
-      -- your config
-    })
-    vim.cmd.colorscheme("vague")
-    
-    vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "#1a1a1a" })
-    vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "#1a1a1a" })
-  end,
-}
---[[{
+  {
+    "vague2k/vague.nvim",
+    config = function()
+      require("vague").setup({
+      })
+      vim.cmd.colorscheme("vague")
+
+      vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "#1a1a1a" })
+      vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "#1a1a1a" })
+    end,
+  },
+  --[[{
 		"rose-pine/neovim",
 		name = "rose-pine",
 		lazy = false,
@@ -31,7 +30,7 @@ return {
 			vim.cmd("colorscheme rose-pine")
 		end,
 	},--]]
---[[	{
+  --[[	{
 		"shaunsingh/nord.nvim",
 		lazy = false,
 		priority = 1000,
@@ -43,7 +42,7 @@ return {
 			vim.cmd("colorscheme nord")
 		end,
 	},--]]
---[[	{
+  --[[	{
 		"rebelot/kanagawa.nvim",
 		lazy = false,
 		priority = 1000,
@@ -51,7 +50,7 @@ return {
 			require("kanagawa").load("wave")
 		end,
 	},--]]
---[[{
+  --[[{
 		"catppuccin/nvim",
 		name = "catppuccin",
 		priority = 1000,
@@ -59,7 +58,7 @@ return {
 			vim.cmd.colorscheme("catppuccin-mocha")
 		end,
 	},--]]
---[[{
+  --[[{
     'AlexvZyl/nordic.nvim',
     lazy = false,
     priority = 1000,
