@@ -14,6 +14,7 @@ return {
 		config = function()
 			-- Set up nvim-cmp.
 			local cmp = require("cmp")
+			vim.opt.pumheight = 25 -- max rows in the completion list
 			require("luasnip.loaders.from_vscode").lazy_load()
 			cmp.setup({
 				snippet = {
@@ -23,7 +24,22 @@ return {
 				},
 				window = {
 					completion = cmp.config.window.bordered(),
-					documentation = cmp.config.window.bordered(),
+					documentation = cmp.config.window.bordered({
+						max_height = 30,
+						max_width = 100,
+					}),
+				},
+				formatting = {
+					format = function(_, item)
+						local max = 30
+						if #item.abbr > max then
+							item.abbr = item.abbr:sub(1, max - 1) .. "…"
+						end
+						if item.menu and #item.menu > 20 then
+							item.menu = item.menu:sub(1, 19) .. "…"
+						end
+						return item
+					end,
 				},
 				mapping = cmp.mapping.preset.insert({
 					["<C-n>"] = cmp.mapping.scroll_docs(-4),

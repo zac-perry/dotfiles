@@ -32,7 +32,7 @@ return {
       vim.lsp.config("csharp_ls", {
         cmd = { vim.fn.stdpath("data") .. "/mason/bin/csharp-ls" },
         cmd_env = {
-          DOTNET_ROOT = "/opt/homebrew/bin/dotnet",
+          DOTNET_ROOT = vim.fn.has("mac") == 1 and "/opt/homebrew/opt/dotnet/libexec" or "/usr/lib64/dotnet",
         },
         init_options = {
           AutomaticWorkspaceInit = true,
